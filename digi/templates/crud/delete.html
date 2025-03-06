@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/crud/delete.css' %}">
+<h2>Excluir Digimon</h2>
+<p>Tem certeza de que deseja excluir <strong>{{ object.nome }}</strong>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'digi:home' %}">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,180 @@
+/* Reset de estilo */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/* Estilo principal da página de registro */
+.main-register {
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-register {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.left-register h1 {
+    color: #e74c3c;
+    font-size: 3vw;
+    margin-bottom: 20px;
+}
+
+.left-register-img {
+    width: 35vw;
+}
+
+.right-register {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-register {
+    width: 50%; /* Reduz a largura do card para 50% */
+    max-width: 400px; /* Define um tamanho máximo para evitar que fique muito largo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px; /* Reduz o espaçamento interno */
+    background: #2f2841;
+    border-radius: 15px; /* Reduz o arredondamento */
+    box-shadow: 0px 10px 40px #00000056;
+    text-align: center;
+}
+
+.card-register h2 {
+    color: #e74c3c;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+form p {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    color: #f0ffffde;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+form input {
+    width: 95%;
+    height: 45px; /* Reduz a altura dos campos */
+    border: none;
+    border-radius: 10px;
+    padding: 10px; /* Ajusta o espaçamento interno */
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt; /* Diminui o tamanho da fonte */
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+form input::placeholder {
+    color: #f0ffff94;
+}
+
+form button {
+    width: 100%;
+    padding: 12px 0px; /* Reduz a altura do botão */
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #e74c3c;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    font-size: 14pt;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #e74c3c;
+}
+
+form p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 950px) {
+    .card-register {
+        width: 70%; /* Ajusta a largura para telas médias */
+    }
+}
+
+@media (max-width: 600px) {
+    .main-register {
+        flex-direction: column;
+    }
+
+    .left-register h1 {
+        display: none;
+    }
+
+    .left-register {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-register {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-register-img {
+        width: 50vw;
+    }
+
+    .card-register {
+        width: 90%; /* Ajusta a largura para telas pequenas */
+    }
+
+    form input {
+        width: 90%;
+    }
+
+    form button {
+        width: 90%;
+    }
+}
