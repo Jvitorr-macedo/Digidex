@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/crud/create.css' %}">
+<h2>{% if object %}Editar Digimon{% else %}Criar Digimon{% endif %}</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if object %}Salvar Alterações{% else %}Criar{% endif %}</button>
+</form>
+{% endblock %}

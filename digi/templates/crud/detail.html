@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/crud/detail.css' %}">
+<h2>{{ object.nome }}</h2>
+<img src="{{ object.imagem.url }}" alt="{{ object.nome }}" width="200">
+<p><strong>Descrição:</strong> {{ object.descricao }}</p>
+<p><strong>Nível:</strong> {{ object.nivel }}</p>
+<div class="botao"><a href="{% url 'digi:update' object.id %}">Editar</a> |
+<a href="{% url 'digi:delete' object.id %}">Excluir</a> |
+<a href="{% url 'digi:home' %}">Voltar</a>
+</div>
+{% endblock %}

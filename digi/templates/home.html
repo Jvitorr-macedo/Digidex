@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="logo">
+    <img src="{% static 'images/Logo.png' %}" width="90" height="90" alt="Ícone de Digivice">
+
+</div>
+<form method="get" class="search-form">
+    <label for="nome">Buscar por nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite o nome do Digimon" value="{{ request.GET.nome }}">
+    <button type="submit">Buscar</button>
+</form>
+
+
+<table class="digimon-table">
+    <thead>
+        <tr>
+            <div class="link">
+                <th><a href="?orderby=nome">Nome</a></th>
+            </div>
+            <div class="link">
+                <th><a href="?orderby=nivel">Nível</a></th>
+            </div>
+            <th>Imagem</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for digimon in digimons %}
+        <tr>
+            <td>{{ digimon.nome }}</td>
+            <td>{{ digimon.nivel }}</td>
+            <td><img src="{{ digimon.imagem.url }}" alt="{{ digimon.nome }}" width="100"></td>
+            <td>
+                <a href="{% url 'digi:detail' digimon.id %}">Detalhes</a> |
+                <a href="{% url 'digi:update' digimon.id %}">Editar</a> |
+                <a href="{% url 'digi:delete' digimon.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Paginação -->
+<div class="pagination">
+    {% if digimons.has_previous %}
+    <a href="?page={{ digimons.previous_page_number }}&orderby={{ request.GET.orderby }}">Página Anterior</a>
+    {% endif %}
+
+    <span>Página {{ digimons.number }} de {{ digimons.paginator.num_pages }}</span>
+
+    {% if digimons.has_next %}
+    <a href="?page={{ digimons.next_page_number }}&orderby={{ request.GET.orderby }}">Próxima Página</a>
+    {% endif %}
+</div>
+{% endblock %}

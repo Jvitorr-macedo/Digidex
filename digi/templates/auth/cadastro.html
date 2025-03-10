@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth/cadastro.css' %}">
+<div class="main-register">
+    <div class="left-register">
+        <h1>Crie sua conta<br>E faça parte da nossa comunidade</h1>
+        <img src="{% static 'images/Tela_login.jpg' %}" alt="Astronauta flutuando" class="left-register-img">
+    </div>
+    <div class="right-register">
+        <div class="card-register">
+            <h2>Cadastro de Usuário</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-register">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

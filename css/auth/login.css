@@ -1,0 +1,180 @@
+/* Reset de estilo */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/* Estilo principal da página de login */
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.left-login h1 {
+    color: #e74c3c;
+    font-size: 3vw;
+}
+
+.left-login-img {
+    width: vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 100%; /* Aumenta a largura do card de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-login h1 {
+    color: #e74c3c;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+}
+
+.textfield {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 15px 0px; 
+}
+
+.textfield input {
+    width: 100%; /* Aumenta a largura dos campos de entrada */
+    height: 50px; 
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 14pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+    
+.textfield input::placeholder {
+    color: #f0ffff94;
+}
+
+.entrar p {
+    color: #f0ffffde;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.entrar p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.entrar p a:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    width: 100%; /* Aumenta a largura do botão de login */
+    padding: 16px 0px;
+    margin: 30px 0 0 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #e74c3c;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    font-size: 14pt;
+}
+
+.btn-login:hover {
+    background: #e74c3c;
+}
+
+/* Responsividade */
+@media (max-width: 950px) {
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-login {
+        flex-direction: column;
+    }
+
+    .left-login h1 {
+        display: none;
+    }
+
+    .left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-img {
+        width: 50vw;
+    }
+
+    .card-login {
+        width: 90%;
+    }
+
+    .textfield input {
+        width: 90%; /* Ajuste para telas menores */
+    }
+
+    .btn-login {
+        width: 90%; /* Ajuste para o botão em telas menores */
+    }
+}

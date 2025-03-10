@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth/login.css' %}">
+    <title>Login - DigiDex</title>
+</head>
+<body>
+
+<div class="main-login">
+    <div class="left-login">
+        <h1>Faça seu login<br>E personalize o seu Digimon</h1>
+        <img src="{% static 'images/weregarurumon.png' %}" class="left-login-img" alt="">
+    </div>
+    <div class="right-login">
+        <form method="post" action="{% url 'digi:login' %}">
+            {% csrf_token %}
+            <div class="card-login">
+                <h1>LOGIN</h1>
+
+                <div class="textfield">
+                    <label for="id_username">Usuário</label>
+                    <input type="text" name="username" placeholder="Digite seu usuário" autofocus autocomplete="username" required maxlength="150" id="id_username">
+                </div>
+
+                <div class="textfield"> 
+                    <label for="id_password">Senha</label>
+                    <input type="password" name="password" placeholder="Digite a sua senha" autocomplete="current-password" required id="id_password">
+                </div>
+
+                <div class="entrar">
+                    <p>Ainda não tem uma conta? <a href="{% url 'digi:register' %}">Crie uma.</a></p>
+                    <button type="submit" class="btn-login">Entrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

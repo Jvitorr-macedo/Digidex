@@ -1,0 +1,154 @@
+/* Estilo Global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fundo claro */
+    color: #333; /* Texto escuro */
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333; /* Títulos com cor principal */
+}
+
+/* Formulário de Busca */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.search-form input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #2c3e50; /* Fundo do botão */
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+/* Tabela de Digimons */
+.digimon-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.digimon-table th,
+.digimon-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.digimon-table th {
+    background-color: #2c3e50; /* Fundo do cabeçalho */
+    color: #e74c3c ; /* Texto branco */
+    font-weight: bold;
+}
+
+.digimon-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Linhas pares com fundo claro */
+}
+
+.digimon-table img {
+    width: 100px;
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+.digimon-table a {
+    color: #e74c3c; /* Cor do link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.digimon-table a:hover {
+    color: #777; /* Cor do link ao passar o mouse */
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    background-color: #2c3e50; /* Fundo do link */
+    color: white; /* Texto branco */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #0056b3; /* Fundo ao passar o mouse */
+}
+
+.pagination span {
+    font-weight: bold;
+    color: #333; /* Texto escuro */
+}
+
+
+
+/* Logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px; /* Remove margens adicionais */
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.link {
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .digimon-table {
+        font-size: 0.9rem;
+    }
+
+    .search-form {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .pagination a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
